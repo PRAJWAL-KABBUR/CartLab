@@ -35,9 +35,10 @@ public class CustomerController {
 	Customer c=	customerService.registerCustomer(cust);
 	if(c==null)
 		return  Response.status(HttpStatus.NOT_FOUND);
-	else
+	else {
 		email.simpleEmail(cust.getEmail(), "Welcome to E-Store of farming", "Registeration Complete");
 		return Response.success(cust);
+	}
 	}
 	
 	@GetMapping
